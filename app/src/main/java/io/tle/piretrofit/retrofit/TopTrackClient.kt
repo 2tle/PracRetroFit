@@ -9,5 +9,5 @@ object TopTrackClient {
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-    fun getTopTrackInterface() : ITopTrack = instance.create(ITopTrack::class.java)
+    val service : ITopTrack = instance.create(ITopTrack::class.java)
 }
