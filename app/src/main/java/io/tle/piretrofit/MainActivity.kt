@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val call : Call<TopTracksDTO> = TopTrackClient.getTopTrackInterface().getTopTracks(key ="563f17153e9c60240d5e29bb1a508549")
+        val call : Call<TopTracksDTO> = TopTrackClient.service.getTopTracks(key ="563f17153e9c60240d5e29bb1a508549")
         call.enqueue(object : Callback<TopTracksDTO> {
             override fun onResponse(call: Call<TopTracksDTO>, response: Response<TopTracksDTO>) {
                 Log.d(">",response.code().toString())
